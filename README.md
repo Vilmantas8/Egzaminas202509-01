@@ -1,72 +1,32 @@
-# Statybinės technikos nuomos sistema
+# Egzaminas202509
 
-## Projektą aprašymas
-Įrangos rezervacijos ir administravimo sistema, skirta statybinės technikos nuomai. Sistema leidžia administratoriui įkelti turimą įrangą, o vartotojams ją rezervuoti ir išsinuomoti su protingais apribojimais.
+## Statybinės technikos nuomos sistema
 
-## Verslo idėja
-Statybinės technikos nuoma - krautuvai, betonmaišės, generatoriai, pjovimo įrankiai ir kita profesionali įranga.
+Egzamino projektas 2025-09 - įrangos rezervacijos ir administravimo sistema.
 
-## Funkciniai reikalavimai
+### Git Workflow
+- **main** - stabilus production kodas
+- **feature/** - funkcionalumų vystymas
+- Pull Request procesas visiems pakeitimams
 
-### Visi vartotojai:
-- Peržiūrėti įrangos sąrašą
-- Peržiūrėti pasirinktos įrangos informaciją
+### Commit konvencijos
+- `feat:` - nauja funkcija
+- `fix:` - klaidos taisymas
+- `docs:` - dokumentacija
+- `test:` - testai
+- `refactor:` - refaktoringas
+- `perf:` - performance gerinimas
 
-### Administratorius:
-- Sukurti naują įrangą sistemoje
-- Atnaujinti įrangos informaciją
-- Keisti įrangos būseną (paskelbta, juodraštis)
-- Peržiūrėti visas rezervacijas
-- Peržiūrėti pasirinktos rezervacijos informaciją
-- Keisti rezervacijos būseną (patvirtinta, atmesta, vykdoma, laukianti)
+### Branch'ų sąrašas
+- `initial-setup` - pradinė projekto konfigūracija
+- `feature/auth` - autentifikacijos sistema
+- `feature/equipment-management` - įrangos valdymas
+- `feature/reservations-core` - rezervacijų branduolys
+- `feature/user-reservations` - vartotojų rezervacijos
+- `feature/admin-reservations` - administratorių rezervacijos
+- `feature/testing-optimization` - testai ir optimizacija
+- `feature/deployment` - deployment procesas
+- `feature/doc` - dokumentacijos vystymas
 
-### Paprastas vartotojas:
-- Peržiūrėti savo rezervacijas
-- Sukurti naują rezervaciją
-- Atnaujinti rezervacijos informaciją
-- Atšaukti rezervaciją
-
-## Nefunkciniai reikalavimai
-
-### Technologijos:
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Node.js, Express
-- **Duomenų bazė**: MongoDB
-- **Versijų kontrolė**: Git, GitHub
-- **Testavimas**: Jest, React Testing Library
-
-### Kiti reikalavimai:
-- Vartotojų autentifikacija
-- Responsive dizainas
-- Unit testai pagrindiniam funkcionalumui
-- Protingi rezervacijos apribojimai
-
-## Vartotojų rolės
-1. **Administratorius** - valdo įrangą ir rezervacijas
-2. **Paprastas vartotojas** - rezervuoja įrangą
-
-## Projekto struktūra
-```
-├── frontend/          # React aplikacija
-├── backend/           # Node.js/Express API
-├── docs/              # Dokumentacija
-└── tests/             # Testai
-```
-
-## Paleidimo instrukcijos
-
-### Lokaliai
-1. Klonuokite repozitoriją
-2. Įdiekite priklausomybes: `npm install`
-3. Sukonfigūruokite MongoDB jungtis
-4. Paleiskite backend: `npm run server`
-5. Paleiskite frontend: `npm run dev`
-
-### Deployment
-Sistema bus išdėstyta į Render/Vercel platformas.
-
-## Vystymo procesas
-- Kiekviena funkcija vystoma atskirame Git branch'e
-- Pull Request procesas į main branch'ą
-- Commit'ų konvencija: feat/fix/docs/test
-- Užduočių sekimas per Trello
+---
+**Repository**: https://github.com/Vilmantas8/Egzaminas202509
