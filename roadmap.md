@@ -1,7 +1,7 @@
 # Roadmap - 8 dienų vystymo planas
 
 ## Diena 1: Projektų paruošimas ir dokumentacija
-**Data: 2024-12-10**  
+**Data: 2025-09**  
 **Branch: initial-setup**
 
 ### Užduotys:
