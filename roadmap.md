@@ -2,7 +2,7 @@
 
 ## Diena 1: Projektų paruošimas ir dokumentacija
 **Data: 2025-09**  
-**Branch: initial-setup**
+**Branch: iniciavimas**
 
 ### Užduotys:
 - ✅ Sukurti projektų katalogą

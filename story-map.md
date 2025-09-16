@@ -18,7 +18,7 @@
   - Rezervacijos kalendorius  
   - Kontaktinė informacija
 
-### Administratorius
+### Administratoriaus funkcijos
 
 **US-03: Įrangos kūrimas**
 - Kaip administratorius, noriu sukurti naują įrangos įrašą, kad galėčiau ją pateikti nuomai

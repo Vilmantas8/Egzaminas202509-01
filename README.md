@@ -2,7 +2,7 @@
 
 ## Statybinės technikos nuomos sistema
 
-Egzamino projektas 2025-09 - įrangos rezervacijos ir administravimo sistema.
+Egzamino projektas 2025-09** - įrangos rezervacijos ir administravimo sistema.
 
 ### Git Workflow
 - **main** - stabilus production kodas
