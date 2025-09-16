@@ -1,7 +1,7 @@
 # Roadmap - 8 dienų vystymo planas
 
 ## Diena 1: Projektų paruošimas ir dokumentacija
-**Data: 2024-12-10**  
+**Data: 2025-09**  
 **Branch: initial-setup**
 
 ### Užduotys:
@@ -27,7 +27,7 @@ feat: create simplified equipment rental UI design
 ---
 
 ## Diena 2: Autentifikacijos sistema
-**Data: 2024-12-11**
+**Data: 2025-09**
 **Branch: feature/auth**
 
 ### Užduotys:
@@ -52,7 +52,7 @@ feat: create User model and auth endpoints
 ---
 
 ## Diena 3: Įrangos valdymo sistema
-**Data: 2024-12-12**  
+**Data: 2025-09**  
 **Branch: feature/equipment-management**
 
 ### Užduotys:
@@ -77,7 +77,7 @@ fix: equipment validation and error handling
 ---
 
 ## Diena 4: Rezervacijų sistema - pagrindas
-**Data: 2024-12-13**
+**Data: 2025-09**
 **Branch: feature/reservations-core**
 
 ### Užduotys:
@@ -101,7 +101,7 @@ test: add reservation validation unit tests
 ---
 
 ## Diena 5: Vartotojų rezervacijų valdymas
-**Data: 2024-12-14**
+**Data: 2025-09**
 **Branch: feature/user-reservations**
 
 ### Užduotys:
@@ -125,7 +125,7 @@ test: add user reservation component tests
 ---
 
 ## Diena 6: Admin rezervacijų valdymas
-**Data: 2024-12-15**
+**Data: 2025-09**
 **Branch: feature/admin-reservations**
 
 ### Užduotys:
@@ -149,7 +149,7 @@ feat: setup email notification system
 ---
 
 ## Diena 7: Testavimas ir optimizacija
-**Data: 2024-12-16**
+**Data: 2025-09**
 **Branch: feature/testing-optimization**
 
 ### Užduotys:
@@ -174,7 +174,7 @@ refactor: improve code structure and readability
 ---
 
 ## Diena 8: Deployment ir finalizavimas
-**Data: 2024-12-17**
+**Data: 2025-09**
 **Branch: feature/deployment**
 
 ### Užduotys:
