@@ -1,365 +1,430 @@
-# Story Map - Actual Implementation Status
-*VERIFIED PROJECT ANALYSIS - Atnaujinta: 2025-09-17*
-
-Based on detailed folder analysis of `C:\Users\Vartotojas\Egzaminas\`, here's the **ACTUAL** completion status:
-
-## 📊 USER STORIES - BACKEND VS FRONTEND STATUS
-
-### 🔐 Visi vartotojai (Authentication Required)
-
-**✅ US-01: Įrangos sąrašo peržiūra** 
-- **Backend**: ✅ **COMPLETE** - Full API implementation
-  - GET /api/equipment with advanced filtering
-  - Pagination (configurable page size)
-  - Sorting by multiple fields
-  - Text search across name/description
-  - Category, location, price range filtering
-  - Power type and status filtering
-- **Frontend**: ❌ **NOT CONNECTED** - UI exists but no API integration
-- **Status**: Backend ready, frontend needs connection
-
-**✅ US-02: Įrangos detalių peržiūra**
-- **Backend**: ✅ **COMPLETE** - Full implementation
-  - GET /api/equipment/:id with complete details
-  - Image management with primary image selection
-  - Specifications, pricing, location data
-  - Availability checking endpoint
-  - Rating and review system ready
-- **Frontend**: ❌ **NOT CONNECTED** - Component exists but no data
-- **Status**: Backend complete, frontend needs API integration
-
-### 👨‍💼 Administratorius
-
-**✅ US-03: Įrangos kūrimas**
-- **Backend**: ✅ **COMPLETE** - Professional implementation
-  - POST /api/equipment with comprehensive validation
-  - File upload capability for images
-  - Category validation with Lithuanian equipment types
-  - Specifications validation (power, capacity, dimensions)
-  - Location validation with city enumeration
-  - Pricing structure (daily/weekly/monthly)
-  - Admin role verification middleware
-- **Frontend**: ❌ **FORM NOT CONNECTED** - UI form exists
-- **Status**: Backend production-ready, frontend needs API calls
-
-**✅ US-04: Įrangos redagavimas**
-- **Backend**: ✅ **COMPLETE** - Full CRUD implementation
-  - PUT /api/equipment/:id with partial updates
-  - Status management (available/rented/maintenance/reserved)
-  - Image replacement and management
-  - Specification updates with validation
-  - Pricing modifications
-  - Admin authorization required
-- **Frontend**: ❌ **EDIT FORM NOT CONNECTED**
-- **Status**: Backend complete with validation, frontend needs connection
-
-**✅ US-05: Rezervacijų valdymas**
-- **Backend**: ✅ **COMPLETE** - Full administrative control
-  - GET /api/reservations (admin sees all reservations)
-  - PUT /api/reservations/:id/status (admin status updates)
-  - Status workflow: pending → confirmed → active → completed
-  - Bulk operations capability
-  - Filtering by date, user, equipment, status
-  - Reservation details with user and equipment information
-- **Frontend**: ❌ **ADMIN PANEL NOT CONNECTED**
-- **Status**: Backend has complete admin functionality
-
-**✅ US-06: Rezervacijų atmetimas/patvirtinimas**
-- **Backend**: ✅ **COMPLETE** - Status management system
-  - PUT /api/reservations/:id/status with validation
-  - Email notification system ready (commented for development)
-  - Audit trail for status changes
-  - Business logic for status transitions
-- **Frontend**: ❌ **ADMIN CONTROLS NOT CONNECTED**
-- **Status**: Backend ready for production use
-
-### 👤 Paprastas vartotojas
-
-**✅ US-07: Rezervacijos kūrimas**
-- **Backend**: ✅ **COMPLETE** - Sophisticated booking system
-  - POST /api/reservations with comprehensive validation
-  - Date conflict checking to prevent double-booking
-  - Availability verification before reservation creation
-  - Automatic price calculation based on duration
-  - User authentication required
-  - Equipment availability real-time checking
-- **Frontend**: ❌ **RESERVATION FORM NOT CONNECTED**
-- **Status**: Backend has professional booking logic
-
-**✅ US-08: Savo rezervacijų valdymas**
-- **Backend**: ✅ **COMPLETE** - User reservation management
-  - GET /api/reservations (user sees only their reservations)
-  - GET /api/reservations/:id for detailed view
-  - PUT /api/reservations/:id/cancel for user cancellation
-  - Reservation history and status tracking
-  - User-specific filtering and sorting
-- **Frontend**: ❌ **USER DASHBOARD NOT CONNECTED**
-- **Status**: Backend complete with user isolation
-
-**✅ US-09: Profilio valdymas**
-- **Backend**: ✅ **COMPLETE** - User profile management
-  - GET /api/auth/profile - retrieve user information
-  - PUT /api/auth/profile - update profile data
-  - PUT /api/auth/change-password - secure password change
-  - Address management
-  - Profile validation
-- **Frontend**: ❌ **PROFILE FORMS NOT CONNECTED**
-- **Status**: Backend ready with validation
-
-## 🏗️ EPIC IMPLEMENTATION STATUS
-
-### ✅ Epic 1: Autentifikacija ir vartotojų valdymas
-**Backend Status: ✅ 100% COMPLETE**
-- ✅ **User Registration**: POST /api/auth/register with validation
-- ✅ **JWT Authentication**: POST /api/auth/login with secure tokens  
-- ✅ **Password Security**: bcryptjs hashing with salt rounds
-- ✅ **Role Management**: Admin/user roles with middleware
-- ✅ **Profile Management**: Complete CRUD for user profiles
-- ✅ **Token Verification**: JWT middleware for protected routes
-- ✅ **Password Change**: Secure password update functionality
-
-**Frontend Status: ❌ 0% CONNECTED**
-- ❌ Authentication context not implemented
-- ❌ Login/register forms not connected to API
-- ❌ Token storage and management missing
-- ❌ Protected routes not implemented
-- ❌ User session management missing
-
-### ✅ Epic 2: Įrangos valdymas  
-**Backend Status: ✅ 100% COMPLETE**
-- ✅ **Equipment CRUD**: All create, read, update, delete operations
-- ✅ **Image Management**: Multiple images with primary selection
-- ✅ **Category System**: Lithuanian equipment categories (krautuvai, betonmaišės, etc.)
-- ✅ **Advanced Filtering**: Category, location, price, power type, status
-- ✅ **Text Search**: Full-text search across equipment data
-- ✅ **Pagination**: Configurable page size with skip/limit
-- ✅ **Sorting**: Multiple sort fields with direction
-- ✅ **Availability System**: Real-time availability tracking
-- ✅ **Business Logic**: Price calculation, availability checking methods
-
-**Frontend Status: ❌ 20% CONNECTED**
-- ✅ UI components for equipment display exist
-- ❌ API calls not implemented
-- ❌ Real data not connected
-- ❌ Admin equipment management forms not connected
-- ❌ Image upload not integrated
-
-### ✅ Epic 3: Rezervacijų sistema
-**Backend Status: ✅ 100% COMPLETE**  
-- ✅ **Reservation CRUD**: Complete booking system
-- ✅ **Date Validation**: Conflict prevention logic
-- ✅ **Status Management**: Complete booking lifecycle
-- ✅ **Price Calculation**: Automatic pricing based on duration
-- ✅ **User Management**: Personal reservation tracking
-- ✅ **Admin Controls**: Administrative reservation oversight
-- ✅ **Cancellation System**: User and admin cancellation capability
-- ✅ **Business Rules**: Availability checking, conflict prevention
-
-**Frontend Status: ❌ 0% CONNECTED**
-- ❌ Reservation forms not connected to API
-- ❌ Date picker not integrated with availability
-- ❌ User reservation dashboard missing
-- ❌ Admin reservation management not implemented
-- ❌ Status updates not connected
-
-### 🔄 Epic 4: UI/UX ir responsive dizainas
-**Backend Status: ✅ N/A (Complete API support)**
-**Frontend Status: ✅ 80% COMPLETE**
-- ✅ **Tailwind CSS**: Complete responsive design system
-- ✅ **Component Architecture**: Modern React component structure  
-- ✅ **Design System**: Consistent styling and constants
-- ✅ **Mobile-First**: Responsive design implementation
-- ✅ **UI Components**: Forms, cards, navigation components
-- 🔄 **Error Handling**: UI error states need implementation
-- 🔄 **Loading States**: API loading indicators needed
-- 🔄 **User Feedback**: Success/error notifications needed
-
-## 🧩 TASK IMPLEMENTATION MATRIX
-
-### Backend Tasks: ✅ 100% COMPLETE (12/12)
-- ✅ BE-01: Express server setup with security middleware
-- ✅ BE-02: MongoDB connection with error handling
-- ✅ BE-03: Authentication middleware with JWT
-- ✅ BE-04: Įrangos API endpoints (6 endpoints)
-- ✅ BE-05: Rezervacijų API endpoints (5 endpoints)
-- ✅ BE-06: File upload functionality ready
-- ✅ BE-07: Email notifications system (configured for production)
-- ✅ BE-08: API validation with express-validator
-- ✅ BE-09: Error handling middleware
-- ✅ BE-10: Security (CORS, Helmet, Rate limiting)
-- ✅ BE-11: Health check and monitoring endpoints
-- ✅ BE-12: Production-ready configuration
-
-### Frontend Tasks: 🔄 2/12 COMPLETE
-- ✅ FE-01: React aplikacijos setup with Vite
-- ✅ FE-02: Tailwind CSS responsive design system
-- ❌ FE-03: API service layer (Axios integration) - **CRITICAL**
-- ❌ FE-04: Authentication context and state management - **CRITICAL**
-- ❌ FE-05: Equipment listing connected to API - **HIGH PRIORITY**
-- ❌ FE-06: Reservation forms connected to backend - **HIGH PRIORITY**
-- ❌ FE-07: User dashboard with real data - **MEDIUM PRIORITY**
-- ❌ FE-08: Admin panel connected to API - **MEDIUM PRIORITY**
-- ❌ FE-09: Error handling and loading states - **MEDIUM PRIORITY**
-- ❌ FE-10: Form validation integration - **LOW PRIORITY**
-- ❌ FE-11: User notifications system - **LOW PRIORITY**
-- ❌ FE-12: Performance optimization - **LOW PRIORITY**
-
-### Database Tasks: ✅ 100% COMPLETE (5/5)
-- ✅ DB-01: MongoDB schema design with validation
-- ✅ DB-02: User model with authentication fields
-- ✅ DB-03: Equipment model with comprehensive specifications
-- ✅ DB-04: Reservation model with business logic
-- ✅ DB-05: Database indexing for performance
-
-## 🎯 CRITICAL PATH ANALYSIS
-
-### Frontend Integration Priority Matrix:
-
-**🚨 CRITICAL (Must Complete Today):**
-1. **API Service Layer** (2-3 hours)
-   - Axios configuration with interceptors
-   - Base API URL configuration
-   - Authentication token handling
-   - Error response handling
-
-2. **Authentication Integration** (2-3 hours)  
-   - Auth context implementation
-   - Login/register forms connection
-   - Token storage and management
-   - Protected routes setup
-
-3. **Equipment Listing** (2-3 hours)
-   - Connect equipment display to real API
-   - Implement filtering and search
-   - Pagination integration
-   - Loading states
-
-**⚠️ HIGH PRIORITY (Complete Today/Tomorrow):**
-4. **Reservation System** (3-4 hours)
-   - Reservation form API connection
-   - Date validation with backend
-   - User reservation dashboard
-   - Real-time availability checking
-
-5. **User Dashboard** (2-3 hours)
-   - Profile management forms
-   - Personal reservation listing
-   - Account settings integration
-
-**📋 MEDIUM PRIORITY (Tomorrow if time allows):**
-6. **Admin Panel** (2-3 hours)
-   - Equipment management interface
-   - Reservation administrative controls
-   - User management dashboard
-
-7. **Error Handling & UX** (1-2 hours)
-   - Loading states for all API calls
-   - Error message display
-   - Success notifications
-   - Form validation feedback
-
-## 📈 PROJECT METRICS DASHBOARD
-
-### Implementation Completeness:
-- **User Stories**: 9/9 Backend ✅ | 0/9 Frontend ❌
-- **Epic Progress**: 3.8/4 (95%) Backend | 0.8/4 (20%) Frontend  
-- **API Endpoints**: 17/17 (100%) ✅
-- **Database Models**: 3/3 (100%) ✅
-- **UI Components**: 8/8 (100%) ✅
-- **API Integration**: 0/8 (0%) ❌
-
-### Overall Project Status:
-- **Backend Development**: **100%** ✅
-- **Frontend Development**: **25%** 🔄  
-- **Integration Layer**: **0%** ❌
-- **Overall Project**: **75%** 🔄
-
-### Time Investment Analysis:
-- **Backend Hours**: ~40-50 hours (complete professional implementation)
-- **Frontend Hours**: ~10 hours (basic UI components)
-- **Integration Hours Needed**: ~15-20 hours
-- **Total Project Hours**: ~65-80 hours (professional grade)
-
-## 🚀 SUCCESS EXECUTION PLAN
-
-### TODAY (2025-09-17) - Integration Sprint:
-
-**Morning (4 hours):**
-1. **Backend Verification** (1 hour)
-   - Start server, test all 17 endpoints
-   - Create demo data (admin user, equipment, reservations)
-   - Verify MongoDB Atlas connection
-
-2. **API Service Setup** (3 hours)
-   - Create Axios service layer
-   - Implement authentication interceptors
-   - Configure error handling
-   - Create service functions for all endpoints
-
-**Afternoon (4 hours):**
-3. **Authentication Flow** (2 hours)
-   - Auth context implementation
-   - Login/register form connection
-   - Token management and persistence
-
-4. **Core Integration** (2 hours)
-   - Equipment listing with real data
-   - Basic reservation functionality
-
-**Evening (2-3 hours):**
-5. **User Experience** (2-3 hours)
-   - Loading states and error handling
-   - Form validation feedback
-   - Basic user dashboard
-
-### TOMORROW (2025-09-18) - Polish & Deploy:
-
-**Morning (4 hours):**
-- Complete any remaining integration
-- Admin panel functionality
-- End-to-end testing
-- Bug fixes and refinement
-
-**Afternoon (4 hours):**
-- Production deployment
-- Live environment testing
-- Demo preparation
-- Final documentation updates
-
-## 🏆 EXAM DEMO READINESS
-
-### Demo Scenarios Status:
-
-**✅ Scenario 1: Backend API Demo**
-- Complete Postman collection ready
-- All 17 endpoints functional
-- Database with demo data
-- Professional code review ready
-
-**🔄 Scenario 2: Full Stack Demo** (depends on integration completion)
-- User registration and login
-- Equipment browsing and filtering  
-- Reservation creation and management
-- Admin panel functionality
-
-**✅ Scenario 3: Technical Architecture**
-- Database schema explanation
-- Security implementation review
-- Git workflow demonstration
-- Code quality assessment
-
-### Minimum Viable Demo:
-Even if frontend integration is incomplete, the project demonstrates:
-- **Professional Backend Development**: Production-ready Express API
-- **Database Design**: Comprehensive MongoDB schema
-- **Security Implementation**: JWT authentication, validation, CORS
-- **Business Logic**: Reservation system, availability checking
-- **Code Quality**: Clean, documented, well-structured code
-
-**Grade Potential**: A-level backend implementation alone demonstrates substantial technical competency
+# Story Map
+## Statybinės Technikos Rezervacijos Sistema
 
 ---
 
-**🎯 Action Item**: Begin API service layer implementation immediately - the backend foundation is solid and ready for integration!
+## Story Map Overview
 
-**💪 Confidence Level**: HIGH - Professional backend provides excellent foundation for successful exam demonstration
+Story Map padeda vizualizuoti vartotojų kelionę per sistemą ir nustatyti funkcijų prioritetus. Horizontal'iai išdėstyta vartotojo kelionė, vertikal'iai - funkcijų prioritetai.
+
+---
+
+## User Journey Flow (Horizontal Axis)
+
+```
+1. DISCOVERY     2. REGISTRATION    3. BROWSING        4. SELECTION       5. RESERVATION
+   & LANDING        & LOGIN            & SEARCH           & DECISION          & BOOKING
+      ↓                ↓                  ↓                  ↓                  ↓
+6. CONFIRMATION  7. TRACKING       8. MANAGEMENT      9. COMPLETION     10. FEEDBACK
+   & WAITING        & MONITORING       & CHANGES          & RETURN            & REVIEW
+```
+
+---
+
+## Epic Breakdown by User Journey
+
+### 1. DISCOVERY & LANDING
+**Epic:** Pirmas Susipažinimas
+- Sistema pristato save aiškiai
+- Landing page su informacija
+- Mobile-friendly navigacija
+
+**User Stories:**
+- Responsive design implementation
+- Landing page creation
+- Basic navigation structure
+
+**Priority:** Must Have
+**Sprint:** Sprint 1
+
+---
+
+### 2. REGISTRATION & LOGIN
+**Epic:** Vartotojų Valdymas
+
+**Must Have (MVP):**
+- US-001: Vartotojo Registracija
+- US-002: Vartotojo Prisijungimas
+- Basic JWT authentication
+
+**Should Have:**
+- US-003: Profilio Valdymas
+- Password reset functionality
+- Email verification
+
+**Could Have:**
+- Social login (Google, Facebook)
+- Two-factor authentication
+
+**Priority:** Must Have
+**Sprint:** Sprint 1
+
+---
+
+### 3. BROWSING & SEARCH
+**Epic:** Įrangos Katalogas
+
+**Must Have (MVP):**
+- US-004: Įrangos Sąrašo Peržiūra
+- US-006: Įrangos Detalių Peržiūra
+- Basic equipment listing
+
+**Should Have:**
+- US-005: Įrangos Paieška ir Filtravimas
+- Category navigation
+- Sorting options
+
+**Could Have:**
+- US-020: Paieškos Optimizavimas
+- Advanced filtering
+- Saved searches
+- Favorites/Wishlist
+
+**Priority:** Must Have
+**Sprint:** Sprint 2
+
+---
+
+### 4. SELECTION & DECISION
+**Epic:** Produkto Analizė
+
+**Must Have (MVP):**
+- Equipment details page
+- Image gallery
+- Pricing information
+- Basic availability check
+
+**Should Have:**
+- US-017: Prieinamumo Kalendorius
+- Specifications display
+- Similar equipment suggestions
+
+**Could Have:**
+- Equipment comparison
+- Reviews and ratings
+- Usage history/popularity
+
+**Priority:** Must Have
+**Sprint:** Sprint 2
+
+---
+
+### 5. RESERVATION & BOOKING
+**Epic:** Rezervacijos Kūrimas
+
+**Must Have (MVP):**
+- US-007: Rezervacijos Kūrimas
+- Date selection
+- Basic conflict prevention
+- Cost calculation
+
+**Should Have:**
+- Advanced date picker
+- Real-time availability check
+- Terms and conditions
+
+**Could Have:**
+- Multiple equipment booking
+- Recurring reservations
+- Group bookings
+
+**Priority:** Must Have
+**Sprint:** Sprint 3
+
+---
+
+### 6. CONFIRMATION & WAITING
+**Epic:** Rezervacijos Patvirtinimas
+
+**Must Have (MVP):**
+- Reservation confirmation
+- Basic status tracking
+
+**Should Have:**
+- US-018: Email Notifikacijos
+- Confirmation email
+- Status updates
+
+**Could Have:**
+- SMS notifications
+- Calendar integration
+- Reminder notifications
+
+**Priority:** Should Have
+**Sprint:** Sprint 3
+
+---
+
+### 7. TRACKING & MONITORING
+**Epic:** Rezervacijos Stebėjimas
+
+**Must Have (MVP):**
+- US-008: Mano Rezervacijų Peržiūra
+- Basic status display
+
+**Should Have:**
+- Real-time status updates
+- Progress tracking
+- History view
+
+**Could Have:**
+- Mobile app notifications
+- Real-time chat support
+- Status change alerts
+
+**Priority:** Must Have
+**Sprint:** Sprint 4
+
+---
+
+### 8. MANAGEMENT & CHANGES
+**Epic:** Rezervacijos Valdymas
+
+**Must Have (MVP):**
+- US-009: Rezervacijos Redagavimas
+- US-010: Rezervacijos Atšaukimas
+- Basic modification rules
+
+**Should Have:**
+- Change history tracking
+- Cancellation policies
+- Rescheduling options
+
+**Could Have:**
+- Partial cancellation
+- Transfer to another user
+- Upgrade/downgrade equipment
+
+**Priority:** Must Have
+**Sprint:** Sprint 4
+
+---
+
+### 9. COMPLETION & RETURN
+**Epic:** Nuomos Pabaiga
+
+**Should Have:**
+- Return confirmation
+- Final cost calculation
+- Damage reporting
+
+**Could Have:**
+- Digital return inspection
+- Automatic billing
+- Return reminders
+
+**Priority:** Should Have
+**Sprint:** Sprint 5
+
+---
+
+### 10. FEEDBACK & REVIEW
+**Epic:** Atsiliepimai
+
+**Could Have:**
+- Equipment rating
+- Service feedback
+- Review system
+
+**Won't Have (V1):**
+- Public reviews
+- Photo reviews
+- Detailed feedback forms
+
+**Priority:** Could Have
+**Sprint:** Sprint 6
+
+---
+
+## Admin Journey (Separate Flow)
+
+### A. ADMIN DASHBOARD
+**Epic:** Administravimas
+
+**Must Have (MVP):**
+- US-014: Visų Rezervacijų Peržiūra
+- Basic admin interface
+
+**Should Have:**
+- US-019: Administracijos Ataskaitos
+- Dashboard with statistics
+- Quick actions
+
+**Priority:** Must Have
+**Sprint:** Sprint 5
+
+---
+
+### B. EQUIPMENT MANAGEMENT
+**Epic:** Įrangos Administravimas
+
+**Must Have (MVP):**
+- US-011: Įrangos Sukūrimas
+- US-012: Įrangos Redagavimas
+- US-013: Įrangos Šalinimas
+
+**Should Have:**
+- Bulk operations
+- Image management
+- Category management
+
+**Priority:** Must Have
+**Sprint:** Sprint 2
+
+---
+
+### C. RESERVATION MANAGEMENT
+**Epic:** Rezervacijų Administravimas
+
+**Must Have (MVP):**
+- US-015: Rezervacijos Patvirtinimas/Atmetimas
+- US-016: Rezervacijos Būsenos Valdymas
+
+**Should Have:**
+- Bulk status updates
+- Advanced filtering
+- Export functionality
+
+**Priority:** Must Have
+**Sprint:** Sprint 4
+
+---
+
+## Release Planning
+
+### **MVP Release (Minimum Viable Product)**
+**Timeline:** 6-8 weeks
+**Features:**
+- User registration and login
+- Equipment listing and details
+- Basic reservation system
+- Admin equipment management
+- Basic admin reservation management
+- Conflict prevention
+- Responsive design
+
+### **Version 1.0 Release**
+**Timeline:** 10-12 weeks
+**Additional Features:**
+- Advanced search and filtering
+- Email notifications
+- Comprehensive admin dashboard
+- Availability calendar
+- Enhanced UI/UX
+
+### **Version 1.1 Release**
+**Timeline:** 14-16 weeks
+**Additional Features:**
+- Advanced reporting
+- Performance optimizations
+- Enhanced security features
+- Mobile app considerations
+
+---
+
+## Priority Matrix
+
+### **Must Have (Critical for MVP)**
+1. User authentication system
+2. Equipment CRUD (admin)
+3. Equipment browsing (users)
+4. Basic reservation system
+5. Conflict prevention
+6. Responsive design
+7. Basic admin interface
+
+### **Should Have (Important for V1.0)**
+1. Advanced search and filtering
+2. Email notifications
+3. Availability calendar
+4. Comprehensive admin dashboard
+5. Reservation management (edit/cancel)
+6. Status tracking
+
+### **Could Have (Nice to have)**
+1. Advanced analytics
+2. Mobile-specific optimizations
+3. Social features
+4. Integration capabilities
+5. Performance enhancements
+
+### **Won't Have (Future versions)**
+1. Mobile native app
+2. Payment processing
+3. Multi-language support
+4. Advanced reporting
+5. API for third parties
+
+---
+
+## Story Estimation (Story Points)
+
+### Sprint 1 (Authentication & Setup)
+- Project setup: 2 pts
+- User registration: 3 pts
+- User login: 2 pts
+- Basic routing: 1 pt
+- **Total: 8 pts**
+
+### Sprint 2 (Equipment Management)
+- Equipment CRUD (admin): 5 pts
+- Equipment listing (user): 3 pts
+- Equipment details page: 3 pts
+- Image upload: 2 pts
+- **Total: 13 pts**
+
+### Sprint 3 (Reservations Core)
+- Reservation creation: 5 pts
+- Conflict prevention: 3 pts
+- Basic email notifications: 2 pts
+- **Total: 10 pts**
+
+### Sprint 4 (Reservation Management)
+- My reservations page: 3 pts
+- Edit reservations: 3 pts
+- Cancel reservations: 2 pts
+- Admin reservation management: 5 pts
+- **Total: 13 pts**
+
+### Sprint 5 (Admin Features)
+- Admin dashboard: 3 pts
+- Reservation status management: 3 pts
+- Basic reporting: 2 pts
+- **Total: 8 pts**
+
+### Sprint 6 (Polish & Testing)
+- Advanced filtering: 3 pts
+- Calendar component: 5 pts
+- Testing suite: 3 pts
+- Bug fixes: 2 pts
+- **Total: 13 pts**
+
+---
+
+## Success Metrics per Epic
+
+### Authentication Success
+- 100% users can register successfully
+- Login time < 2 seconds
+- Session management works correctly
+
+### Equipment Browsing Success  
+- Page load time < 3 seconds
+- Search results accuracy > 90%
+- Mobile usability score > 85%
+
+### Reservation Success
+- 0% double bookings
+- 95%+ successful reservation submissions
+- Conflict detection accuracy 100%
+
+### Admin Efficiency
+- Reservation approval time < 5 minutes
+- Equipment management task completion < 2 minutes
+- Report generation time < 10 seconds
+
+---
+
+**Dokumentą parengė:** Product Team  
+**Paskutinis atnaujinimas:** 2025-09-24  
+**Versija:** 1.0
