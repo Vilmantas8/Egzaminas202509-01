@@ -1,115 +1,430 @@
-# Story Map - Statybinės technikos nuomos sistema
+# Story Map
+## Statybinės Technikos Rezervacijos Sistema
 
-## User Stories
+---
 
-### Visi vartotojai
+## Story Map Overview
 
-**US-01: Įrangos sąrašo peržiūra**
-- Kaip vartotojas, noriu matyti visą turimą įrangą, kad galėčiau pasirinkti man tinkamą
-- Priėmimo kriterijai:
-  - Matomas įrangos sąrašas su pagrindine informacija
-  - Filtravimo galimybės pagal tipą, kainą, lokaciją
-  - Responsive dizainas
+Story Map padeda vizualizuoti vartotojų kelionę per sistemą ir nustatyti funkcijų prioritetus. Horizontal'iai išdėstyta vartotojo kelionė, vertikal'iai - funkcijų prioritetai.
 
-**US-02: Įrangos detalių peržiūra**  
-- Kaip vartotojas, noriu matyti detaliją įrangos informaciją, kad galėčiau priimti sprendimą
-- Priėmimo kriterijai:
-  - Nuotraukos, specifikacijos, kaina
-  - Rezervacijos kalendorius  
-  - Kontaktinė informacija
+---
 
-### Administratorius
+## User Journey Flow (Horizontal Axis)
 
-**US-03: Įrangos kūrimas**
-- Kaip administratorius, noriu sukurti naują įrangos įrašą, kad galėčiau ją pateikti nuomai
-- Priėmimo kriterijai:
-  - Forma su visais reikiamais laukais
-  - Nuotraukų įkėlimas
-  - Validacija
+```
+1. DISCOVERY     2. REGISTRATION    3. BROWSING        4. SELECTION       5. RESERVATION
+   & LANDING        & LOGIN            & SEARCH           & DECISION          & BOOKING
+      ↓                ↓                  ↓                  ↓                  ↓
+6. CONFIRMATION  7. TRACKING       8. MANAGEMENT      9. COMPLETION     10. FEEDBACK
+   & WAITING        & MONITORING       & CHANGES          & RETURN            & REVIEW
+```
 
-**US-04: Įrangos redagavimas**
-- Kaip administratorius, noriu redaguoti įrangos informaciją, kad palaikyčiau aktualius duomenis
-- Priėmimo kriterijai:
-  - Visų laukų redagavimo galimybė
-  - Būsenos keitimas (paskelbta/juodraštis)
-  - Pakeitimų saugojimas
+---
 
-**US-05: Rezervacijų valdymas**
-- Kaip administratorius, noriu matyti ir valdyti visas rezervacijas
-- Priėmimo kriterijai:
-  - Rezervacijų sąrašas su filtrais
-  - Būsenos keitimas (patvirtinta/atmesta/vykdoma)
-  - Email pranešimai vartotojams
+## Epic Breakdown by User Journey
 
-### Paprastas vartotojas  
+### 1. DISCOVERY & LANDING
+**Epic:** Pirmas Susipažinimas
+- Sistema pristato save aiškiai
+- Landing page su informacija
+- Mobile-friendly navigacija
 
-**US-06: Rezervacijos kūrimas**
-- Kaip vartotojas, noriu rezervuoti įrangą, kad galėčiau ją naudoti reikalingu laiku
-- Priėmimo kriterijai:
-  - Datų pasirinkimas su validacija
-  - Rezervacijos formos užpildymas
-  - Patvirtinimo email
+**User Stories:**
+- Responsive design implementation
+- Landing page creation
+- Basic navigation structure
 
-**US-07: Savo rezervacijų valdymas**
-- Kaip vartotojas, noriu matyti ir valdyti savo rezervacijas
-- Priėmimo kriterijai:
-  - Savo rezervacijų sąrašas
-  - Redagavimo galimybė
-  - Atšaukimo funkcija
+**Priority:** Must Have
+**Sprint:** Sprint 1
 
-## Epic skaidymas
+---
 
-### Epic 1: Autentifikacija ir vartotojų valdymas
-- Registracija
-- Prisijungimas  
-- Profilio valdymas
-- Rolių priskyrimai
+### 2. REGISTRATION & LOGIN
+**Epic:** Vartotojų Valdymas
 
-### Epic 2: Įrangos valdymas
-- Įrangos CRUD operacijos
-- Nuotraukų valdymas
-- Kategorijų sistema
-- Filtravimas ir paieška
+**Must Have (MVP):**
+- US-001: Vartotojo Registracija
+- US-002: Vartotojo Prisijungimas
+- Basic JWT authentication
 
-### Epic 3: Rezervacijų sistema
-- Rezervacijų kūrimas
-- Datų validacija
-- Rezervacijų valdymas
-- Email pranešimai
+**Should Have:**
+- US-003: Profilio Valdymas
+- Password reset functionality
+- Email verification
 
-### Epic 4: UI/UX ir responsive dizainas
-- Tailwind CSS implementacija
-- Mobile-first approach
-- Accessible design
-- Performance optimization
+**Could Have:**
+- Social login (Google, Facebook)
+- Two-factor authentication
 
-## Task'ų suskaidymas
+**Priority:** Must Have
+**Sprint:** Sprint 1
 
-### Frontend Tasks:
-- FE-01: React aplikacijos setup
-- FE-02: Routing ir navigacijos komponentas
-- FE-03: Autentifikacijos formos
-- FE-04: Įrangos sąrašo komponentas
-- FE-05: Įrangos detalių komponentas
-- FE-06: Rezervacijos forma
-- FE-07: Admin dashboard
-- FE-08: Responsive dizainas ir Tailwind
-- FE-09: Unit testų rašymas
+---
 
-### Backend Tasks:
-- BE-01: Express server setup
-- BE-02: MongoDB connection
-- BE-03: Authentication middleware
-- BE-04: Įrangos API endpoints
-- BE-05: Rezervacijų API endpoints
-- BE-06: File upload functionality
-- BE-07: Email notifications
-- BE-08: API validation
-- BE-09: Backend unit testai
+### 3. BROWSING & SEARCH
+**Epic:** Įrangos Katalogas
 
-### Database Tasks:
-- DB-01: MongoDB schema design
-- DB-02: User model
-- DB-03: Equipment model  
-- DB-04: Reservation model
-- DB-05: Seeders ir test data
+**Must Have (MVP):**
+- US-004: Įrangos Sąrašo Peržiūra
+- US-006: Įrangos Detalių Peržiūra
+- Basic equipment listing
+
+**Should Have:**
+- US-005: Įrangos Paieška ir Filtravimas
+- Category navigation
+- Sorting options
+
+**Could Have:**
+- US-020: Paieškos Optimizavimas
+- Advanced filtering
+- Saved searches
+- Favorites/Wishlist
+
+**Priority:** Must Have
+**Sprint:** Sprint 2
+
+---
+
+### 4. SELECTION & DECISION
+**Epic:** Produkto Analizė
+
+**Must Have (MVP):**
+- Equipment details page
+- Image gallery
+- Pricing information
+- Basic availability check
+
+**Should Have:**
+- US-017: Prieinamumo Kalendorius
+- Specifications display
+- Similar equipment suggestions
+
+**Could Have:**
+- Equipment comparison
+- Reviews and ratings
+- Usage history/popularity
+
+**Priority:** Must Have
+**Sprint:** Sprint 2
+
+---
+
+### 5. RESERVATION & BOOKING
+**Epic:** Rezervacijos Kūrimas
+
+**Must Have (MVP):**
+- US-007: Rezervacijos Kūrimas
+- Date selection
+- Basic conflict prevention
+- Cost calculation
+
+**Should Have:**
+- Advanced date picker
+- Real-time availability check
+- Terms and conditions
+
+**Could Have:**
+- Multiple equipment booking
+- Recurring reservations
+- Group bookings
+
+**Priority:** Must Have
+**Sprint:** Sprint 3
+
+---
+
+### 6. CONFIRMATION & WAITING
+**Epic:** Rezervacijos Patvirtinimas
+
+**Must Have (MVP):**
+- Reservation confirmation
+- Basic status tracking
+
+**Should Have:**
+- US-018: Email Notifikacijos
+- Confirmation email
+- Status updates
+
+**Could Have:**
+- SMS notifications
+- Calendar integration
+- Reminder notifications
+
+**Priority:** Should Have
+**Sprint:** Sprint 3
+
+---
+
+### 7. TRACKING & MONITORING
+**Epic:** Rezervacijos Stebėjimas
+
+**Must Have (MVP):**
+- US-008: Mano Rezervacijų Peržiūra
+- Basic status display
+
+**Should Have:**
+- Real-time status updates
+- Progress tracking
+- History view
+
+**Could Have:**
+- Mobile app notifications
+- Real-time chat support
+- Status change alerts
+
+**Priority:** Must Have
+**Sprint:** Sprint 4
+
+---
+
+### 8. MANAGEMENT & CHANGES
+**Epic:** Rezervacijos Valdymas
+
+**Must Have (MVP):**
+- US-009: Rezervacijos Redagavimas
+- US-010: Rezervacijos Atšaukimas
+- Basic modification rules
+
+**Should Have:**
+- Change history tracking
+- Cancellation policies
+- Rescheduling options
+
+**Could Have:**
+- Partial cancellation
+- Transfer to another user
+- Upgrade/downgrade equipment
+
+**Priority:** Must Have
+**Sprint:** Sprint 4
+
+---
+
+### 9. COMPLETION & RETURN
+**Epic:** Nuomos Pabaiga
+
+**Should Have:**
+- Return confirmation
+- Final cost calculation
+- Damage reporting
+
+**Could Have:**
+- Digital return inspection
+- Automatic billing
+- Return reminders
+
+**Priority:** Should Have
+**Sprint:** Sprint 5
+
+---
+
+### 10. FEEDBACK & REVIEW
+**Epic:** Atsiliepimai
+
+**Could Have:**
+- Equipment rating
+- Service feedback
+- Review system
+
+**Won't Have (V1):**
+- Public reviews
+- Photo reviews
+- Detailed feedback forms
+
+**Priority:** Could Have
+**Sprint:** Sprint 6
+
+---
+
+## Admin Journey (Separate Flow)
+
+### A. ADMIN DASHBOARD
+**Epic:** Administravimas
+
+**Must Have (MVP):**
+- US-014: Visų Rezervacijų Peržiūra
+- Basic admin interface
+
+**Should Have:**
+- US-019: Administracijos Ataskaitos
+- Dashboard with statistics
+- Quick actions
+
+**Priority:** Must Have
+**Sprint:** Sprint 5
+
+---
+
+### B. EQUIPMENT MANAGEMENT
+**Epic:** Įrangos Administravimas
+
+**Must Have (MVP):**
+- US-011: Įrangos Sukūrimas
+- US-012: Įrangos Redagavimas
+- US-013: Įrangos Šalinimas
+
+**Should Have:**
+- Bulk operations
+- Image management
+- Category management
+
+**Priority:** Must Have
+**Sprint:** Sprint 2
+
+---
+
+### C. RESERVATION MANAGEMENT
+**Epic:** Rezervacijų Administravimas
+
+**Must Have (MVP):**
+- US-015: Rezervacijos Patvirtinimas/Atmetimas
+- US-016: Rezervacijos Būsenos Valdymas
+
+**Should Have:**
+- Bulk status updates
+- Advanced filtering
+- Export functionality
+
+**Priority:** Must Have
+**Sprint:** Sprint 4
+
+---
+
+## Release Planning
+
+### **MVP Release (Minimum Viable Product)**
+**Timeline:** 6-8 weeks
+**Features:**
+- User registration and login
+- Equipment listing and details
+- Basic reservation system
+- Admin equipment management
+- Basic admin reservation management
+- Conflict prevention
+- Responsive design
+
+### **Version 1.0 Release**
+**Timeline:** 10-12 weeks
+**Additional Features:**
+- Advanced search and filtering
+- Email notifications
+- Comprehensive admin dashboard
+- Availability calendar
+- Enhanced UI/UX
+
+### **Version 1.1 Release**
+**Timeline:** 14-16 weeks
+**Additional Features:**
+- Advanced reporting
+- Performance optimizations
+- Enhanced security features
+- Mobile app considerations
+
+---
+
+## Priority Matrix
+
+### **Must Have (Critical for MVP)**
+1. User authentication system
+2. Equipment CRUD (admin)
+3. Equipment browsing (users)
+4. Basic reservation system
+5. Conflict prevention
+6. Responsive design
+7. Basic admin interface
+
+### **Should Have (Important for V1.0)**
+1. Advanced search and filtering
+2. Email notifications
+3. Availability calendar
+4. Comprehensive admin dashboard
+5. Reservation management (edit/cancel)
+6. Status tracking
+
+### **Could Have (Nice to have)**
+1. Advanced analytics
+2. Mobile-specific optimizations
+3. Social features
+4. Integration capabilities
+5. Performance enhancements
+
+### **Won't Have (Future versions)**
+1. Mobile native app
+2. Payment processing
+3. Multi-language support
+4. Advanced reporting
+5. API for third parties
+
+---
+
+## Story Estimation (Story Points)
+
+### Sprint 1 (Authentication & Setup)
+- Project setup: 2 pts
+- User registration: 3 pts
+- User login: 2 pts
+- Basic routing: 1 pt
+- **Total: 8 pts**
+
+### Sprint 2 (Equipment Management)
+- Equipment CRUD (admin): 5 pts
+- Equipment listing (user): 3 pts
+- Equipment details page: 3 pts
+- Image upload: 2 pts
+- **Total: 13 pts**
+
+### Sprint 3 (Reservations Core)
+- Reservation creation: 5 pts
+- Conflict prevention: 3 pts
+- Basic email notifications: 2 pts
+- **Total: 10 pts**
+
+### Sprint 4 (Reservation Management)
+- My reservations page: 3 pts
+- Edit reservations: 3 pts
+- Cancel reservations: 2 pts
+- Admin reservation management: 5 pts
+- **Total: 13 pts**
+
+### Sprint 5 (Admin Features)
+- Admin dashboard: 3 pts
+- Reservation status management: 3 pts
+- Basic reporting: 2 pts
+- **Total: 8 pts**
+
+### Sprint 6 (Polish & Testing)
+- Advanced filtering: 3 pts
+- Calendar component: 5 pts
+- Testing suite: 3 pts
+- Bug fixes: 2 pts
+- **Total: 13 pts**
+
+---
+
+## Success Metrics per Epic
+
+### Authentication Success
+- 100% users can register successfully
+- Login time < 2 seconds
+- Session management works correctly
+
+### Equipment Browsing Success  
+- Page load time < 3 seconds
+- Search results accuracy > 90%
+- Mobile usability score > 85%
+
+### Reservation Success
+- 0% double bookings
+- 95%+ successful reservation submissions
+- Conflict detection accuracy 100%
+
+### Admin Efficiency
+- Reservation approval time < 5 minutes
+- Equipment management task completion < 2 minutes
+- Report generation time < 10 seconds
+
+---
+
+**Dokumentą parengė:** Product Team  
+**Paskutinis atnaujinimas:** 2025-09-24  
+**Versija:** 1.0

@@ -1,0 +1,593 @@
+/* RESPONSIVE DESIGN ENHANCEMENTS - SPRINT 4 T039
+   Mobile-first responsive design optimizations for the construction equipment rental system
+   Ensures optimal user experience across all device sizes */
+
+/* ===== GLOBAL RESPONSIVE UTILITIES ===== */
+
+/* Improved container spacing for mobile */
+@media (max-width: 576px) {
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Reduce vertical spacing on mobile */
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+  
+  .mt-5 {
+    margin-top: 2rem !important;
+  }
+}
+
+/* ===== NAVIGATION RESPONSIVE ENHANCEMENTS ===== */
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .navbar-nav .nav-link {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-collapse {
+    margin-top: 1rem;
+  }
+  
+  .navbar-nav .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* ===== EQUIPMENT GRID RESPONSIVE DESIGN ===== */
+
+/* Equipment cards responsive behavior */
+@media (max-width: 768px) {
+  .equipment-page .col-md-6 {
+    margin-bottom: 1rem;
+  }
+  
+  .card-img-top-wrapper {
+    height: 180px !important;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  
+  .card-text {
+    font-size: 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .btn-group .btn {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Single column layout on mobile */
+  .equipment-page .col-lg-4,
+  .equipment-page .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .card-img-top-wrapper {
+    height: 160px !important;
+  }
+  
+  .price {
+    font-size: 1rem;
+  }
+  
+  .badge {
+    font-size: 0.7rem;
+  }
+}
+
+/* ===== EQUIPMENT DETAILS RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .equipment-details-page .col-lg-8,
+  .equipment-details-page .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .equipment-details-page .col-lg-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .equipment-image-container {
+    height: 250px !important;
+  }
+  
+  .breadcrumb {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .equipment-details-page .d-flex.gap-2 {
+    flex-direction: column;
+  }
+  
+  .equipment-details-page .d-flex.gap-2 .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .equipment-image-container {
+    height: 200px !important;
+  }
+}
+
+/* ===== ADVANCED FILTERS RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .advanced-filters .col-md-6,
+  .advanced-filters .col-md-3 {
+    margin-bottom: 1rem;
+  }
+  
+  .advanced-filters .card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .price-range-container .d-flex {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .price-range-container .d-flex span {
+    display: none;
+  }
+  
+  .price-range-container .form-control-sm {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .advanced-filters .row.g-3 > div {
+    margin-bottom: 1rem;
+  }
+  
+  .active-filters-tags .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  
+  .active-filters-tags .badge {
+    margin: 0.25rem 0;
+    font-size: 0.75rem;
+  }
+  
+  .btn-group {
+    width: 100%;
+  }
+  
+  .btn-group .btn {
+    flex: 1;
+  }
+}
+
+/* ===== CALENDAR RESPONSIVE DESIGN ===== */
+
+@media (max-width: 576px) {
+  .availability-calendar {
+    padding: 15px;
+    margin: 0 -15px;
+    border-radius: 0;
+  }
+  
+  .calendar-header h5 {
+    font-size: 1rem;
+  }
+  
+  .calendar-header .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .calendar-date {
+    height: 35px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .calendar-header-cell {
+    padding: 8px 3px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .calendar-legend .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .legend-color {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+/* ===== RESERVATIONS PAGE RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .reservations-page .col-md-6,
+  .reservations-page .col-xl-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .reservation-card .card-body {
+    padding: 1rem;
+  }
+  
+  .reservation-card .badge {
+    font-size: 0.7rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn-group .btn {
+    border-radius: 0.375rem !important;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .reservations-page .row.text-center > div {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== ADMIN DASHBOARD RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .admin-dashboard-page .col-xl-3,
+  .admin-dashboard-page .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .admin-dashboard-page .nav-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .admin-dashboard-page .nav-tabs .nav-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .admin-dashboard-page .nav-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .table-responsive {
+    font-size: 0.85rem;
+  }
+  
+  .btn-group-sm .btn {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-dashboard-page .col-xl-3,
+  .admin-dashboard-page .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .admin-dashboard-page .display-4 {
+    font-size: 2rem;
+  }
+  
+  .admin-dashboard-page .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .admin-dashboard-page .nav-tabs .nav-link {
+    text-align: center;
+  }
+}
+
+/* ===== MODAL RESPONSIVE ENHANCEMENTS ===== */
+
+@media (max-width: 768px) {
+  .modal-xl {
+    max-width: 95%;
+    margin: 1rem auto;
+  }
+  
+  .modal-dialog-centered {
+    min-height: calc(100vh - 2rem);
+  }
+  
+  .modal-content {
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .modal-header {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .modal-footer {
+    padding: 1rem;
+    flex-direction: column;
+  }
+  
+  .modal-footer .btn {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal {
+    padding: 0;
+  }
+  
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+    height: 100vh;
+  }
+  
+  .modal-content {
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
+  
+  .modal-xl,
+  .modal-lg,
+  .modal-sm {
+    max-width: 100%;
+  }
+  
+  .modal-header .modal-title {
+    font-size: 1rem;
+  }
+  
+  .modal-body .row > div {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ===== FORM ENHANCEMENTS FOR MOBILE ===== */
+
+@media (max-width: 576px) {
+  .form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .form-control,
+  .form-select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.75rem;
+  }
+  
+  .form-control-sm {
+    font-size: 14px;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .btn-sm {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .input-group-text {
+    padding: 0.75rem;
+  }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Focus indicators for better keyboard navigation */
+.btn:focus,
+.form-control:focus,
+.form-select:focus,
+.nav-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 576px) {
+  .btn,
+  .form-control,
+  .form-select,
+  .nav-link,
+  .dropdown-item {
+    min-height: 44px; /* Apple's recommended minimum touch target */
+  }
+  
+  .btn-sm {
+    min-height: 36px;
+  }
+  
+  .calendar-date {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+/* ===== LOADING STATES RESPONSIVE ===== */
+
+@media (max-width: 576px) {
+  .spinner-border {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1060;
+  }
+}
+
+/* ===== UTILITY CLASSES FOR MOBILE ===== */
+
+@media (max-width: 576px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-text-center {
+    text-align: center !important;
+  }
+  
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-stack > * {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .mobile-stack > *:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  .navbar,
+  .btn,
+  .modal,
+  .alert {
+    display: none !important;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+  
+  .container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    page-break-after: avoid;
+  }
+}
+
+/* ===== DARK MODE SUPPORT (FUTURE ENHANCEMENT) ===== */
+
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles would go here for future implementation */
+  /* This is a placeholder for potential dark mode support */
+}
+
+/* ===== HIGH CONTRAST MODE SUPPORT ===== */
+
+@media (prefers-contrast: high) {
+  .btn-outline-primary,
+  .btn-outline-secondary {
+    border-width: 2px;
+  }
+  
+  .card {
+    border-width: 2px;
+  }
+  
+  .form-control,
+  .form-select {
+    border-width: 2px;
+  }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
