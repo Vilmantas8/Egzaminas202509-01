@@ -1,0 +1,127 @@
+/* APP-SPECIFIC STYLES */
+
+.App {
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Navigation adjustments */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  background-color: white !important;
+}
+
+.navbar-brand {
+  color: #667eea !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+  color: #6c757d !important;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #667eea !important;
+}
+
+/* Main content padding */
+main {
+  padding-top: 0;
+}
+
+/* Card hover effects */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Button styles */
+.btn {
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+.btn-outline-primary {
+  color: #667eea;
+  border-color: #667eea;
+}
+
+.btn-outline-primary:hover {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+/* Alert styles */
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+/* Form control styles */
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Badge styles */
+.badge {
+  font-weight: 500;
+}
+
+/* Table styles */
+.table {
+  background: white;
+}
+
+.table thead th {
+  border-top: none;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Loading states */
+.loading-spinner {
+  width: 2rem;
+  height: 2rem;
+  border-width: 0.25em;
+}
+
+/* Empty state styles */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6c757d;
+}
+
+.empty-state i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  padding: 2rem 0;
+  margin-top: auto;
+}
